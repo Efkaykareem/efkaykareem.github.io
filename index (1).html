@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kareem Faruk · Senior Site Reliability Engineer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#EEF2F6;--surface:#FFFFFF;--ink:#12202E;--muted:#4A5B6C;--line:#CFD8E1;--accent:#1F5FBF;--pend:#B76E00;--ok:#0F7B5F;--chip:#E2E9F1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1620;--surface:#15222F;--ink:#E8EEF4;--muted:#9CB0C2;--line:#27384A;--accent:#6FA3F0;--pend:#F2B04A;--ok:#4FD1A5;--chip:#1D2E3F;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0D1620;--surface:#15222F;--ink:#E8EEF4;--muted:#9CB0C2;--line:#27384A;--accent:#6FA3F0;--pend:#F2B04A;--ok:#4FD1A5;--chip:#1D2E3F;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.08;margin:0;letter-spacing:-.02em}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+header.top b{font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
+nav{display:flex;gap:18px;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:center;padding:48px 0 72px}
+.hero h1{font-size:clamp(42px,7vw,76px);font-weight:800}
+.hero .role{font-size:21px;margin:18px 0 0;color:var(--muted);max-width:30ch}
+.hero p.lead{max-width:52ch;margin:22px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
+.btn.p{background:var(--ink);color:var(--bg)}
+.tx{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:22px}
+.tx h3{font-size:17px;margin-bottom:4px}
+.tx small{color:var(--muted)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.row:last-of-type{border-bottom:0}
+.st{font-weight:500;font-size:15px;padding:3px 10px;border-radius:99px;background:var(--chip);min-width:96px;text-align:center}
+.st.pending{color:var(--pend)}.st.retry{color:var(--accent)}.st.ok{color:var(--ok)}
+.tx button{margin-top:10px;width:100%;padding:11px;border-radius:8px;border:0;background:var(--accent);color:var(--bg);font:500 16px "IBM Plex Sans",sans-serif;cursor:pointer}
+.tx button[disabled]{opacity:.6;cursor:progress}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section>h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:8px}
+section>p.sub{color:var(--muted);margin:0 0 34px;max-width:60ch}
+.proj{display:grid;grid-template-columns:230px 1fr;gap:10px 40px;padding:26px 0;border-bottom:1px solid var(--line)}
+.proj:last-child{border-bottom:0}
+.proj h3{font-size:23px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tags span{font-size:13.5px;padding:2px 10px;border-radius:99px;background:var(--chip);color:var(--muted)}
+.proj p{margin:0 0 10px;max-width:64ch}
+.proj p b{font-weight:500;color:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.job{padding:0 0 22px 20px;border-left:2px solid var(--line);position:relative;margin:0}
+.job::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.job h3{font-size:20px}.job small{color:var(--muted);display:block;margin-bottom:6px}
+.job p{margin:0;max-width:52ch}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain li{padding:7px 0;border-bottom:1px solid var(--line)}
+ul.plain li:last-child{border-bottom:0}
+.skills dt{font-weight:500;margin-top:14px}.skills dd{margin:2px 0 0;color:var(--muted)}
+footer{padding:48px 0 64px;border-top:1px solid var(--line)}
+footer h2{font-size:clamp(30px,5vw,48px);margin-bottom:14px}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:32px;padding-top:24px}.proj{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}nav{gap:12px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><b>Kareem Faruk</b><nav><a href="#work">Work</a><a href="#path">Career</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav></header>
+
+<div class="hero">
+<div>
+<h1>I make payment systems fix themselves.</h1>
+<p class="role">Kareem Faruk, Senior Site Reliability Engineer</p>
+<p class="lead">I work on the VAS payments platform at Moniepoint, which handles airtime, data and bill payments across MTN, Airtel, Glo, 9Mobile and more. I find the manual work that wakes people up at night, then automate it, monitor it and write it down.</p>
+<div class="btns"><a class="btn p" href="#work">See what I’ve built</a><a class="btn" href="mailto:Farukkareem9@gmail.com">Email me</a></div>
+</div>
+<div class="tx" aria-live="polite">
+<h3>A stuck transaction, before and after</h3>
+<small>This is the problem my Rundeck job solves. Try it.</small>
+<div style="margin-top:12px">
+<div class="row"><span>Airtime · ₦500</span><span class="st pending" id="s1">Pending</span></div>
+<div class="row"><span>Data bundle · 2 GB</span><span class="st pending" id="s2">Pending</span></div>
+<div class="row"><span>Bill payment</span><span class="st pending" id="s3">Pending</span></div>
+</div>
+<button id="rq" type="button">Run requery job</button>
+</div>
+</div>
+
+<section id="work">
+<h2>Selected work</h2>
+<p class="sub">Each of these started as a repeated manual task or a blind spot, and became something that runs without a person.</p>
+
+<article class="proj"><div><h3>Stuck-transaction requery on Rundeck</h3><div class="tags"><span>Rundeck</span><span>Python</span><span>Ansible</span><span>SQL</span></div></div>
+<div><p><b>Problem.</b> Stuck VAS transactions had to be found in the database and updated by hand.</p>
+<p><b>What I built.</b> A Rundeck job that scans for stuck transactions and requeries them, with both scheduled and on-demand runs.</p>
+<p><b>Result.</b> Delivered cleanly and running as intended, with less manual effort and fewer processing delays. My lead rated the quarter above expectations.</p></div></article>
+
+<article class="proj"><div><h3>KBPS requery for maxed-out transactions</h3><div class="tags"><span>Automation</span><span>Reliability</span></div></div>
+<div><p><b>Problem.</b> Transactions that hit their retry limit needed someone to reprocess them.</p>
+<p><b>What I did.</b> I proposed and oversaw the design and delivery of an automated requery job that detects and reprocesses pending transactions on its own.</p>
+<p><b>Result.</b> Better transaction success rates and fewer escalations.</p></div></article>
+
+<article class="proj"><div><h3>Settlement visibility and alerting</h3><div class="tags"><span>Grafana</span><span>New Relic</span><span>PagerDuty</span></div></div>
+<div><p><b>Problem.</b> Settlement failures were found after customers felt them.</p>
+<p><b>What I built.</b> A settlement dashboard for VAS transactions, Airtel “026 count” alerts, and internal settlement success-rate tracking. Alerts use a volume guard so quiet hours don’t trigger false alarms.</p>
+<p><b>Result.</b> Failures are caught earlier, with less alert noise.</p></div></article>
+
+<article class="proj"><div><h3>Incident discipline, automated</h3><div class="tags"><span>PagerDuty</span><span>Confluence</span><span>Slack</span></div></div>
+<div><p><b>Problem.</b> Post-incident reviews were chased by hand and often late.</p>
+<p><b>What I built.</b> Automated tracking and nudging for P1 post-incident review compliance, plus work on generating postmortems from PagerDuty into Confluence.</p>
+<p><b>Result.</b> Fewer manual follow-ups and clearer accountability after incidents.</p></div></article>
+
+<article class="proj"><div><h3>Self-service cache clearing</h3><div class="tags"><span>Back Office</span><span>Toil reduction</span></div></div>
+<div><p><b>Problem.</b> Routine cache clears needed the infrastructure team.</p>
+<p><b>What I built.</b> A cache-clearing button in the Back Office so support can do it themselves.</p></div></article>
+
+<article class="proj"><div><h3>Provider incident log</h3><div class="tags"><span>Slack Workflow Builder</span><span>Google Sheets</span></div></div>
+<div><p><b>Problem.</b> Telco and provider failures weren’t recorded in one place.</p>
+<p><b>What I built.</b> A Slack workflow that logs each provider failure straight into a shared sheet, so patterns are visible when raising issues with providers.</p></div></article>
+</section>
+
+<section>
+<h2>Also part of the job</h2>
+<p class="sub">The steady work around the projects.</p>
+<div class="grid2">
+<ul class="plain"><li>24/7 on-call for high-availability fintech systems</li><li>Root cause analysis and written postmortems</li><li>VAS escalation framework in PagerDuty, with Slack and Gmail alert automations</li></ul>
+<ul class="plain"><li>Weekly VAS performance and incident reports</li><li>Database operations and SQL troubleshooting in production</li><li>Runbooks and standard operating procedures</li></ul>
+</div>
+</section>
+
+<section id="path">
+<h2>Career</h2>
+<p class="sub">Five years, from IT support to site reliability.</p>
+<div class="grid2"><div>
+<div class="job"><h3>Senior Site Reliability Engineer</h3><small>Moniepoint Group · Sept 2026 to now</small><p>Promoted after a year of owning automation, observability and incident process on VAS payments.</p></div>
+<div class="job"><h3>Site Reliability Engineer</h3><small>Moniepoint Group · May 2025 to Aug 2026</small><p>On-call, dashboards and alerting, SQL troubleshooting, and the automation above.</p></div>
+<div class="job"><h3>DevOps Engineer</h3><small>Vendease · Aug 2024 to May 2025</small><p>Multi-cloud infrastructure, CI/CD pipelines and Terraform across AWS, Azure and GCP.</p></div></div>
+<div>
+<div class="job"><h3>IT Support and SysAdmin</h3><small>Vendease · Sept 2023 to Aug 2024</small><p>Tier 1 to 3 production support, IAM and VPN, and scripting to automate repeat tasks.</p></div>
+<div class="job"><h3>Technical Support Engineer</h3><small>Earlybrite (contract) · Oct 2022 to Jun 2023</small><p>Server health monitoring and database incident troubleshooting.</p></div>
+<div class="job"><h3>IT Support Engineer</h3><small>Padson Nigeria · Jul 2021 to Sept 2022</small><p>Tier 2 support, Microsoft 365 and Active Directory.</p></div></div>
+</div>
+</section>
+
+<section id="stack">
+<h2>Stack and credentials</h2>
+<div class="grid2">
+<dl class="skills" style="margin:0">
+<dt>Observability</dt><dd>Datadog, Grafana, Prometheus, New Relic, ELK, PagerDuty</dd>
+<dt>Automation</dt><dd>Rundeck, Python, Bash, PowerShell, Ansible, Terraform</dd>
+<dt>Cloud and containers</dt><dd>AWS, GCP, Azure, Docker, Kubernetes</dd>
+<dt>CI/CD</dt><dd>GitHub Actions, Jenkins, GitLab CI</dd>
+<dt>Data</dt><dd>PostgreSQL, MySQL, SQL query optimisation</dd>
+</dl>
+<div><ul class="plain"><li>AWS Certified Cloud Practitioner</li><li>CompTIA A+ (220-1102)</li><li>Unified Endpoint Management Certification</li><li>ISC2 Certified in Cybersecurity (in progress)</li><li>GCP Professional Cloud Architect (in progress)</li><li>HND Computer Engineering, Yaba College of Technology</li></ul></div>
+</div>
+</section>
+
+<footer id="contact">
+<h2>Let’s talk reliability.</h2>
+<p>Based in Lagos. Open to conversations about SRE, automation and payments infrastructure.</p>
+<div class="btns"><a class="btn p" href="mailto:Farukkareem9@gmail.com">Farukkareem9@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/kareem-faruk-97b382253">LinkedIn</a><a class="btn" href="https://github.com/Efkaykareem">GitHub</a></div>
+</footer>
+</div>
+<script>
+(function(){
+var b=document.getElementById('rq'),ids=['s1','s2','s3'];
+function set(i,c,t){var e=document.getElementById(ids[i]);e.className='st '+c;e.textContent=t}
+b.addEventListener('click',function(){
+b.disabled=true;
+if(b.dataset.done){ids.forEach(function(_,i){set(i,'pending','Pending')});delete b.dataset.done;b.textContent='Run requery job';b.disabled=false;return}
+b.textContent='Requerying…';
+ids.forEach(function(_,i){setTimeout(function(){set(i,'retry','Retrying')},400+i*350)});
+ids.forEach(function(_,i){setTimeout(function(){set(i,'ok','Successful');if(i===2){b.dataset.done=1;b.textContent='Reset';b.disabled=false}},1700+i*450)});
+});
+})();
+</script>
+</body>
+</html>
